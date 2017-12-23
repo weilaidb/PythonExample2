@@ -1,0 +1,7 @@
+#!/usr/bin/python
+# -*- coding: GBK -*-
+'''
+Created on 2017Äê12ÔÂ23ÈÕ
+
+@author: Administrator
+'''

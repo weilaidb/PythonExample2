@@ -5,6 +5,9 @@ Created on 2017骞�12鏈�19鏃� 22:53:54
 @author: Administrator
 '''
 from pickle import APPEND
+import string
+
+
 # from test.test_funcattrs import InstancemethodAttrTest
 
 # from string import import Template
@@ -68,8 +71,17 @@ print quest.count('or')
 
 
 
+print  '=-' * 30
+# print string.ascii_uppercase
+
+# print string.ascii_uppercase
+# print string.ascii_letters
+# print string.ascii_lowercase
+# print string.digits
 
 
+
+print  '=-' * 30
 
 
 
