@@ -8,14 +8,12 @@ import sys
 import os
 
 tips = "regular expression"
-print '-' * 30 + tips + '-' * 30
+print ('-' * 30 + tips + '-' * 30)
 
-print 'Number of arguments:', len(sys.argv)
-print 'They are:', str(sys.argv)
+print ('Number of arguments:', len(sys.argv))
+print ('They are:', str(sys.argv))
 if (len(sys.argv) > 1):
 	filename=str(sys.argv[1])
-	print 'filename is ' + filename
-	
 ###open and read file
 def openfilereturncontent(filename):
 	try:
@@ -24,21 +22,21 @@ def openfilereturncontent(filename):
 		fh.close()
 		return filecontent
 	finally:
-		print "Error:没有找到文件或读取文件失败"
+		print( "Error:没有找到文件或读取文件失败")
 	
 
 def writefilewithcontent(filename, text):
 	# try:
-	print filename
-	print os.path.dirname(filename)
-	print os.path.exists(os.path.dirname(filename))
+	print( filename)
+	print( os.path.dirname(filename))
+	print( os.path.exists(os.path.dirname(filename)))
 	if False == os.path.exists(os.path.dirname(filename)):
 		os.makedirs(os.path.dirname(filename))
 	fw = open(filename,"w")
 	fw.write(text)
 	fw.close()
 	# finally:
-		# print "Error:没有找到文件或读取文件失败"
+		# print( "Error:没有找到文件或读取文件失败")
 	
 def f2(m2):
 	d = m2.groupdict()
@@ -75,7 +73,7 @@ def regrexheader(text):
 	astr = re.sub(r'\s*#ifndef.*', '', astr)  ##del 
 	astr = re.sub(r'\s*#ifdef.*', '', astr)  ##del 
 	astr = re.sub(r'\s*#else', '', astr)  ##del 
-	# print astr
+	# print( astr)
 	return astr
 	
 def delete(filepath):
@@ -94,25 +92,25 @@ def delete(filepath):
 	
 if __name__=="__main__":
 	
-	print '=' * 3 + "begin" + '=' * 3
+	print( '=' * 3 + "begin" + '=' * 3)
 	str=""
 	savedir="regularexpress/"
 	savefilename="abc.txt"
 	if (len(sys.argv) > 1):
 		str = openfilereturncontent(sys.argv[1])
-		print "file[%s] content:" % (sys.argv[1])
+		print( "file[%s] content:" % (sys.argv[1]))
 		savefilename = savedir + os.path.realpath(sys.argv[1])
-	# print str
+	# print( str)
 	text = regrexheader(str)
-	print '-' *100
-	print "deal result:" + text
+	print( '-' *100)
+	print( "deal result:" + text)
 	
 	writefilewithcontent(savefilename, text)
 	delete(savefilename)
 	os.remove(savefilename)
 	os.rename(savefilename +'.re.txt', savefilename)
 	
-	print '=' * 3 + "end" + '=' * 3
+	print( '=' * 3 + "end" + '=' * 3)
 	
 
 

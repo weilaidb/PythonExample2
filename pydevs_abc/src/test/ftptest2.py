@@ -26,13 +26,15 @@ class MYFTP:
         try:   
             timeout = 60  
             socket.setdefaulttimeout(timeout)  
-            ftp.set_pasv(True)  
-            print '开始连接到 %s' %(self.hostaddr)  
+            ftp.set_pasv(True)
+            print("nihaoma")
+
+            print("开始连接到 %s" %(self.hostaddr))
             ftp.connect(self.hostaddr, self.port)  
-            print '成功连接到 %s' %(self.hostaddr)  
-            print '开始登录到 %s' %(self.hostaddr)  
+            print('成功连接到 %s' %(self.hostaddr))
+            print('开始登录到 %s' %(self.hostaddr))
             ftp.login(self.username, self.password)  
-            print '成功登录到 %s' %(self.hostaddr)  
+            print ('成功登录到 %s' %(self.hostaddr))
             debug_print(ftp.getwelcome())  
         except Exception:  
             deal_error("连接或登录失败")  
