@@ -9,7 +9,7 @@ timeout = 30
 port = 21  
 ftp.connect('192.168.1.188',port,timeout) # 连接FTP服务器  
 ftp.login('UserName','888888') # 登录  
-print ftp.getwelcome()  # 获得欢迎信息   
+# print ftp.getwelcome()  # 获得欢迎信息   
 ftp.cwd('file/test')    # 设置FTP路径  
 list = ftp.nlst()       # 获得目录列表  
 for name in list:  
